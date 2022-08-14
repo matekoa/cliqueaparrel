@@ -17,6 +17,8 @@ E-Commerce Website To Sell Clothing.
 
 ## Installed Packages
 
+### Backend
+
 1 Running On VirtualEnv
 2 Latest Version of Django (4.1) installed in venv
 3 Django Rest Framework
@@ -24,6 +26,11 @@ E-Commerce Website To Sell Clothing.
 5 Djoser
 6 Pillow
 7 Stripe
+
+## FrontEnd (Vue)
+1. Vue
+2. Axios
+3. Bulma
 
 ### 5 Djoser
 - Handles Users and user authentication.
@@ -47,3 +54,13 @@ python manage.py runserver
 
 ## Install Vue CLI
 npm install -g @vue/cli
+
+## Install Axios
+-Packages used to communicate to backend
+
+## Install Bulma (can also use bootstrap)
+- CSS Framework
+
+## Add Font Awesome
+Add to index.html in Vue directory
+<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
