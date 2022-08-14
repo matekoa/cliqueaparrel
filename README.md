@@ -26,10 +26,24 @@ E-Commerce Website To Sell Clothing.
 7 Stripe
 
 ### 5 Djoser
-- Handles Authentication
+- Handles Users and user authentication.
+- Can Create Users and get authorisation tokens.
 
 ### 6 Pillow
 - Resizing images (i.e image optimization)
 
 ### 7 Stripe
 - Payment Gateway. To accept transactions
+
+## Initializing Databases
+
+python manage.py makemigrations
+
+-Create super user
+python manage.py createsuperuser
+
+## Run Server
+python manage.py runserver
+
+## Install Vue CLI
+npm install -g @vue/cli
