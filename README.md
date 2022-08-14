@@ -5,9 +5,9 @@ E-Commerce Website To Sell Clothing.
 ## Learning
 
 | --- | --- |
-Frameworks | |
-Front End | Vue |
-Back End | Django |
+| Frameworks | |
+| Front End | Vue |
+| Back End | Django |
 
 ## Features & Concepts
 
