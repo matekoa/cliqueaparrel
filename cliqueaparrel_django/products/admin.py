@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import Category, Products
+
+
+# Add products and categories to the admin backend
+admin.site.register(Category)
+admin.site.register(Products)
