@@ -48,7 +48,7 @@ class Products(models.Model):
         if self.thumbnail:
             return 'http://http://127.0.0.1:8000/' + self.thumbnail.url
         
-        #If There is no thumbnail then it creates it from the image.
+        #If There is no thumbnail then it creates it from the image in the backend.
         else:
             if self.image:
                 self.thumbnail = self.make_thumbnail(self.image)
