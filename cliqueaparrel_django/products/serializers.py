@@ -14,6 +14,7 @@ class ProductSerializer(serializers.ModelSerializer):
         fields = (
             "id",
             "name",
+            "price",
             "get_absolute_url",
             "description",
             "get_image",
