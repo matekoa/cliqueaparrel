@@ -34,6 +34,11 @@
         <!--Router View Is Where All the content Is placed-->
         <router-view/>
       </section>
+
+      <footer class="footer">
+        <p class="has-text-centered">Copyright (c) 2022</p>
+        
+        </footer>
    </div>
 </template>
 
