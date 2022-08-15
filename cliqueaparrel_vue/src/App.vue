@@ -4,14 +4,14 @@
         <div class="navbar-brand">
           <router-link to="/" class="navbar-item"><strong>Clique Apparel</strong></router-link>
           <!--Hamburger menu for small Devices-->
-          <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu">
+          <a class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar-menu" @click="showMobileMenu = !showMobileMenu">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
         </div>
-        <!--Two dives below because we want menu to be on one side of the page and the logo on the other side-->
-        <div class="navbar-menu" id="navbar-menu">
+        <!--Two divs below because we want menu to be on one side of the page and the logo on the other side-->
+        <div class="navbar-menu" id="navbar-menu" v-bind:class="{'is-active': showMobileMenu}">
           <div class="navbar-end">
             <router-link to="/summer" class="navbar-item">Summer</router-link>
             <router-link to="/winter" class="navbar-item">Winter</router-link>
@@ -41,6 +41,17 @@
         </footer>
    </div>
 </template>
+
+<!--Vue JS Script To configure Hamburger Menu-->
+<script>
+  export default {
+    data() {
+      return {
+        showMobileMenu: false,
+      }
+    }
+  }
+</script>
 
 <style lang="scss">
 @import '../node_modules/bulma';
