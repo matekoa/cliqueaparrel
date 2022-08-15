@@ -64,3 +64,7 @@ npm install -g @vue/cli
 ## Add Font Awesome
 Add to index.html in Vue directory
 <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+## Creating Apps for the project.
+E.g Products:
+-python manage.py startapp products
