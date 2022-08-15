@@ -21,7 +21,7 @@ class Category(models.Model):
         return f'/{self.slug}'
 
 
-class Products(models.model):
+class Products(models.Model):
     category = models.ForeignKey(Category, related_name="products", on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     slug = models.SlugField()
@@ -30,4 +30,42 @@ class Products(models.model):
     image = models.ImageField(upload_to='uploads/', blank=True, null=True)
     thumbnail = models.ImageField(upload_to='uploads/', blank=True, null=True)
     date_added = models.DateTimeField(auto_now_add=True) #Automatically adds date when new product is added to the database
+
+    class Meta:
+        ordering = ('-date_added',) #Sorts in descending order
+
+    def __str__(self):
+        return self.name
     
+    def get_absolute_url(self):
+        return f'/{self.category.slug}/{self.slug}'
+    
+    def get_image(self):
+        if self.image:
+            return 'http://http://127.0.0.1:8000/' + self.image.url
+        return ''
+    def get_image(self):
+        if self.thumbnail:
+            return 'http://http://127.0.0.1:8000/' + self.thumbnail.url
+        
+        #If There is no thumbnail then it creates it from the image.
+        else:
+            if self.image:
+                self.thumbnail = self.make_thumbnail(self.image)
+                self.save()
+
+                return 'http://http://127.0.0.1:8000/' + self.thumbnail.url
+            else:
+                return ''
+
+    def make_thumbnail(self, image, size=(300,200)):
+        img = Image.open(image)
+        img.convert('RGB')
+        img.thumbnail(size)
+
+        thumb_io = BytesIO()
+        img.save(thumb_io, 'JPEG', quality=85)
+
+        thumbnail = File(thumb_io, name=image.name)
+
+        return thumbnail
