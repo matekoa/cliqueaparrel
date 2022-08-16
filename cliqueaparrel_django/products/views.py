@@ -13,3 +13,8 @@ class LatestProductsList(APIView):
         products = Products.objects.all()[0:4]
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
+
+class ProductDetail((APIView)):
+    def get_object(self, category_slug, product_slug):
+        try:
+            return Products.objects.filter(category__slug=category_slug).get(slug=product_slug)
