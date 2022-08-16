@@ -51,6 +51,7 @@ import axios from 'axios'
 
     mounted() {
       this.getLatestProducts()
+      document.title = 'Home | CliqueApparel'
     },
 
     methods: {
@@ -61,6 +62,8 @@ import axios from 'axios'
           .get('api/v1/latest-products/')
           .then(response => {
             this.latestProducts = response.data
+
+            document.title = this.Products.name + '| CliqueApparel'
           })
           .catch(error => {
             console.log(error) //To fix later
