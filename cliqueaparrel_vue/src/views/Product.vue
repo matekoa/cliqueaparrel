@@ -46,11 +46,13 @@ import { toast } from 'bulma-toast'
         },
 
         methods: {
-            getProducts() {
+            async getProducts() {
+                this.$store.commit('setIsLoading',true)
+
                 const category_slug  = this.$route.params.category_slug
                 const product_slug  = this.$route.params.product_slug  
                 
-                axios
+               await axios
                     .get(`api/v1/products/${category_slug}/${product_slug}`)
                     .then(response => {
                         this.products = response.data
@@ -58,6 +60,8 @@ import { toast } from 'bulma-toast'
                     .catch(error => {
                         console.log(error) //To fix later
                     })
+
+                this.$store.commit('setIsLoading',false)
             },
 
             addToCart() {
