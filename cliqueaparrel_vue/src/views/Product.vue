@@ -20,7 +20,7 @@
                     </div>
 
                     <div class="control">
-                        <a class="button is-dark">Add To Cart</a>
+                        <a class="button is-dark" @click="addToCart">Add To Cart</a>
                     </div>
                 </div>
             </div>
@@ -56,6 +56,19 @@ import axios from 'axios'
                     .catch(error => {
                         console.log(error) //To fix later
                     })
+            },
+
+            addToCart() {
+                if (isNaN(this.quantity) || this.quantity <1){
+                    this.quantity = 1
+                }
+
+                const item = {
+                    products: this.products,
+                    quantity: this.quantity
+                }
+
+                this.$store.commit('addToCart', item)
             }
         }
 
