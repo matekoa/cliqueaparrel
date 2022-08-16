@@ -112,7 +112,6 @@
     transform: rotate(360deg);
   }
 }
-
 .is-loading-bar {
   height: 0;
   overflow: hidden;
@@ -120,8 +119,8 @@
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
 
-  &.is-loading {
-    height: 80px;
-  }
+&.is-loading {
+  height: 80px;
+}
 }
 </style>

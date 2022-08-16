@@ -52,9 +52,12 @@ import axios from 'axios'
     mounted() {
       this.getLatestProducts()
     },
+
     methods: {
-      getLatestProducts(){
-        axios
+      async getLatestProducts(){
+        this.$store.commit('setIsLoading',true)
+
+        await axios
           .get('api/v1/latest-products/')
           .then(response => {
             this.latestProducts = response.data
@@ -62,6 +65,8 @@ import axios from 'axios'
           .catch(error => {
             console.log(error) //To fix later
           })
+
+          this.$store.commit('setIsLoading',false)
       }
     }
   }
