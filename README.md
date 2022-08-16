@@ -60,6 +60,7 @@ npm install -g @vue/cli
 
 ## Install Bulma (can also use bootstrap)
 - CSS Framework
+npm install bulma-toast
 
 ## Add Font Awesome
 Add to index.html in Vue directory
