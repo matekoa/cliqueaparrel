@@ -21,7 +21,7 @@ class Category(models.Model):
         return f'/{self.slug}'
 
 
-class Products(models.Model):
+class Product(models.Model):
     category = models.ForeignKey(Category, related_name="products", on_delete=models.CASCADE)
     name = models.CharField(max_length=255)
     slug = models.SlugField()
