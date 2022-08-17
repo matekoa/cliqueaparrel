@@ -19,12 +19,12 @@
                   <div class="control">
                     <input type="text" class="input" placeholder="What are you looking for?" name="query">
                   </div>
-                  </div>
 
                   <div class="control">
                     <button class="button is-success">
                       <span class="icon"><i class="fas fa-search"></i> </span>
                     </button>
+                      </div>
                   </div>
               </form>
             </div>
