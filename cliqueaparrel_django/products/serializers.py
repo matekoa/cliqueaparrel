@@ -1,4 +1,3 @@
-import imp
 from itertools import product
 from operator import imod
 

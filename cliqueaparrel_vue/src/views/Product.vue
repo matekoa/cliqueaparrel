@@ -42,7 +42,7 @@ import { toast } from 'bulma-toast'
         },
 
         mounted() {
-            this.getProducts()
+            this.getProduct()
         },
 
         methods: {
@@ -53,7 +53,7 @@ import { toast } from 'bulma-toast'
                 const product_slug  = this.$route.params.product_slug  
                 
                await axios
-                    .get(`api/v1/products/${category_slug}/${product_slug}`)
+                    .get(`api/v1/products/${category_slug}/${product_slug}/`)
                     .then(response => {
                         this.product = response.data
                     })
