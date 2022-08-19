@@ -63,7 +63,7 @@ import CartItem from '@/components/CartItem.vue'
             this.cart = this.$store.state.cart
         },
 
-        methods{
+        methods: {
             removeFromCart(item){
               this.cart.items = this.cart.items.filter(i => i.product.id !== item.product.id)  
             }
