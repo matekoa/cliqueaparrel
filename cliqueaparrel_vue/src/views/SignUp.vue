@@ -55,7 +55,7 @@ import { toast } from 'bulma-toast'
                 username: '',
                 password: '',
                 password2: '',
-                errors: []
+                errors: [],
             }
         },
 
@@ -81,6 +81,7 @@ import { toast } from 'bulma-toast'
                         username: this.username,
                         password: this.password
                     }
+                }
 
                     axios
                         .post("api/v1/users", formData)
@@ -97,6 +98,7 @@ import { toast } from 'bulma-toast'
                             this.$router.push('/log-in')
 
                          })
+
                          .catch(error => {
                             if(error.response){
                                 for (const property in error.response.data){
@@ -114,6 +116,5 @@ import { toast } from 'bulma-toast'
                          })
                 }
             }
-        }
     }
 </script>
