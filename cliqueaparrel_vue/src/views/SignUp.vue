@@ -15,14 +15,14 @@
                 <div class="field">
                     <label>Password</label>
                     <div class="control">
-                        <input type="text"  class="input" v-model="password">
+                        <input type="password"  class="input" v-model="password">
                     </div>
                 </div>
 
                 <div class="field">
                     <label>Repeat Password</label>
                     <div class="control">
-                        <input type="text"  class="input" v-model="password2">
+                        <input type="password"  class="input" v-model="password2">
                     </div>
                 </div>
 
@@ -55,7 +55,7 @@ import { toast } from 'bulma-toast'
                 username: '',
                 password: '',
                 password2: '',
-                errors: [],
+                errors: []
             }
         },
 
@@ -67,22 +67,18 @@ import { toast } from 'bulma-toast'
                 if (this.username === '') {
                     this.errors.push ('The username is missing')
                 }
-
                 if (this.password === '') {
                     this.errors.push ('The password is too short')
                 }
-
                 if (this.password !== this.password2 ) {
                     this.errors.push ('Passwords don\'t match')
                 }
-
                 if (!this.errors.length) {
                     const formData = {
                         username: this.username,
                         password: this.password
                     }
-                }
-
+                 
                     axios
                         .post("api/v1/users", formData)
                         .then(response =>{
@@ -94,7 +90,7 @@ import { toast } from 'bulma-toast'
                                 duration: 2000,
                                 position: 'bottom-right',
                             })
-
+                            //Automatically reroutes to login screen
                             this.$router.push('/log-in')
 
                          })
@@ -116,5 +112,6 @@ import { toast } from 'bulma-toast'
                          })
                 }
             }
+        }
     }
 </script>
