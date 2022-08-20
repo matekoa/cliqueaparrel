@@ -15,7 +15,7 @@
                 <div class="field">
                     <label>Password</label>
                     <div class="control">
-                        <input type="text"  class="input" v-model="password">
+                        <input type="password"  class="input" v-model="password">
                     </div>
                 </div>
 
