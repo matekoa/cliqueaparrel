@@ -80,7 +80,7 @@ import { toast } from 'bulma-toast'
                     }
                  
                     axios
-                        .post("api/v1/users", formData)
+                        .post("api/v1/users/", formData)
                         .then(response =>{
                             toast({
                                 message: 'Account Created, Please log in',
