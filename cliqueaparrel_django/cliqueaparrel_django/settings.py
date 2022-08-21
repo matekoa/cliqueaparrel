@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     #This is where we tell django which packages we have installed
     'rest_framework', 
     'rest_framework.authentication',
+    'rest_framework.authtoken',
     'corsheaders',
     'djoser',
     #'stripe'
