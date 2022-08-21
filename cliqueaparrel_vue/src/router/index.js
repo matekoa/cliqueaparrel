@@ -7,6 +7,8 @@ import Search from '../views/Search.vue'
 import Cart from '../views/Cart.vue'
 import SignUp from '../views/SignUp.vue'
 import Login from '../views/Login.vue'
+import MyAccount from '../views/MyAccount.vue'
+import store from '@/store'
 
 const routes = [
   {
@@ -67,11 +69,32 @@ const routes = [
     component: Login
   },
 
+  //added router guard which prevents user from going to my account without being logged in
+  {
+    path: '/my-account',
+    name: 'MyAccount',
+    component: MyAccount,
+    meta: {
+      requireLogin: true
+    }
+  },
+
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
+})
+
+//check whether we are authenticated
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requireLogin) && !store.state.isAuthenticated){
+    next ({name: 'Login', query: {to: to.path}});
+  }
+
+  else {
+    next()
+  }
 })
 
 export default router
